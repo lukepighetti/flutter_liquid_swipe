@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
 class LiquidSwipeData {
-  final Offset localPosition;
-  final double padding;
-  final double diameter;
-  final Size size;
-
   /// The calculations for a Liquid Swipe transition
   LiquidSwipeData({
     @required this.localPosition,
@@ -13,6 +8,11 @@ class LiquidSwipeData {
     @required this.diameter,
     @required this.size,
   });
+
+  final Offset localPosition;
+  final double padding;
+  final double diameter;
+  final Size size;
 
   /// The maximum width this liquid swipe can traverse
   double get xMax {

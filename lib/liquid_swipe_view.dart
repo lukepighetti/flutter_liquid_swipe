@@ -3,6 +3,7 @@ import 'package:flutter/physics.dart';
 
 import 'liquid_swipe_clipper.dart';
 import 'liquid_swipe_data.dart';
+import 'liquid_swipe_handle.dart';
 
 class LiquidSwipe extends StatefulWidget {
   const LiquidSwipe({Key key, this.children}) : super(key: key);
@@ -142,29 +143,11 @@ class LiquidSwipeState extends State<LiquidSwipe>
                   left: -data.diameter / 2,
                   child: Transform.translate(
                     offset: data.buttonCenter,
-                    // offset: Offset.zero,
                     child: Opacity(
                       opacity: Curves.easeInCubic.transform(1 - data.progress),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white.withOpacity(0.2),
-                          ),
-                        ),
-                        height: data.diameter,
-                        width: data.diameter,
-                        child: Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            onTap: () => next(),
-                            customBorder: StadiumBorder(),
-                            child: Icon(
-                              Icons.chevron_right,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                      child: LiquidSwipeHandle(
+                        diameter: data.diameter,
+                        onTap: () => next(),
                       ),
                     ),
                   ),
