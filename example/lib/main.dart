@@ -33,6 +33,7 @@ class _HomePage extends StatelessWidget {
       body: LiquidSwipe(
         key: _key,
         children: [
+          /// First page
           LiquidSwipeCard(
             onSkip: () => liquidSwipeController.next(),
             name: "GameCoin",
@@ -54,9 +55,11 @@ class _HomePage extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
           ),
+
+          /// Second page
           LiquidSwipeCard(
             onTapName: () => liquidSwipeController.previous(),
-            name: "GameCoin",
+            name: "Back",
             action: "",
             image: AssetImage(
               "assets/second-page-image.png",
@@ -71,6 +74,29 @@ class _HomePage extends StatelessWidget {
             bodyColor: Colors.white.withOpacity(0.8),
             gradient: LinearGradient(
               colors: [Colors.purple.shade700, Colors.purple.shade600],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+
+          /// Third page
+          LiquidSwipeCard(
+            onTapName: () => liquidSwipeController.previous(),
+            name: "Back",
+            action: "",
+            image: AssetImage(
+              "assets/third-page-image.png",
+            ),
+            title: "Cash",
+            subtitle: "Prizes",
+            body:
+                "Delorem sunt occaecat cupidatat \nnonproident, mit a \nculpa qui officia",
+            buttonColor: Colors.white.withOpacity(0.9),
+            titleColor: Colors.red.shade200.withOpacity(0.5),
+            subtitleColor: Colors.red.shade100.withOpacity(0.8),
+            bodyColor: Colors.white.withOpacity(0.8),
+            gradient: LinearGradient(
+              colors: [Colors.red.shade700, Colors.red.shade600],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
