@@ -6,6 +6,8 @@ import 'liquid_swipe_data.dart';
 import 'liquid_swipe_handle.dart';
 
 class LiquidSwipe extends StatefulWidget {
+  /// Draws an interactive liquid swipe flow whose children
+  /// are clipped and transitioned when swiping or tapping the handle.
   const LiquidSwipe({Key key, this.children}) : super(key: key);
 
   /// The pages to display.
@@ -107,6 +109,7 @@ class LiquidSwipeState extends State<LiquidSwipe>
         /// Update constraints on build if possible
         if (this.constraints != constraints) this.constraints = constraints;
 
+        /// The resting position for [LiquidSwipeHandle]
         _dragOffset ??=
             Offset(constraints.maxWidth, constraints.maxHeight * 0.7);
 

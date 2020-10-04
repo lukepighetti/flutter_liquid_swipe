@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LiquidSwipeData {
-  /// The calculations for a Liquid Swipe transition
+  /// The calculations for a Liquid Swipe path based on transition inputs
+  /// and handle diameter and padding.
   LiquidSwipeData({
     @required this.localPosition,
     @required this.padding,
@@ -9,10 +10,19 @@ class LiquidSwipeData {
     @required this.size,
   });
 
-  final Offset localPosition;
-  final double padding;
-  final double diameter;
+  /// The size of the viewport we are painting to.
   final Size size;
+
+  /// The position of the [LiquidSwipeHandle] center within the viewport.
+  ///
+  /// Typically driven from gesture pan offset, or defaulting to the lower right.
+  final Offset localPosition;
+
+  /// The padding around the [LiquidSwipeHandle]
+  final double padding;
+
+  /// The diameter of the [LiquidSwipeHandle]
+  final double diameter;
 
   /// The maximum width this liquid swipe can traverse
   double get xMax {
@@ -24,11 +34,12 @@ class LiquidSwipeData {
     return localPosition.dx.clamp(0.0, xMax);
   }
 
+  /// The swipe progress from `0.0` to `1.0`
   double get progress {
     return (xMax - x) / xMax;
   }
 
-  /// The current button center
+  /// The [LiquidSwipeHandle] center
   Offset get buttonCenter {
     return Offset(x, localPosition.dy);
   }
@@ -105,4 +116,18 @@ class LiquidSwipeData {
 
     return path;
   }
+
+  @override
+  operator ==(covariant LiquidSwipeData old) =>
+      old.diameter == diameter &&
+      old.localPosition == localPosition &&
+      old.padding == padding &&
+      old.size == size;
+
+  @override
+  int get hashCode =>
+      diameter.hashCode ^
+      localPosition.hashCode ^
+      padding.hashCode ^
+      size.hashCode;
 }
