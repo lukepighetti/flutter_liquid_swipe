@@ -22,10 +22,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class _HomePage extends StatelessWidget {
+class _HomePage extends StatefulWidget {
   _HomePage({Key key}) : super(key: key);
 
+  @override
+  State<_HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<_HomePage> {
   final _key = GlobalKey<LiquidSwipeState>();
+
   LiquidSwipeState get liquidSwipeController => _key.currentState;
 
   @override
