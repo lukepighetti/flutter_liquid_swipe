@@ -55,22 +55,20 @@ class LiquidSwipeCard extends StatelessWidget {
 
                 return Row(
                   children: [
-                    FlatButton(
+                    TextButton(
                       child: Text(
                         name,
                         style: _style,
                       ),
                       onPressed: onTapName,
-                      shape: StadiumBorder(),
                     ),
                     Spacer(),
-                    FlatButton(
+                    TextButton(
                       child: Text(
                         action,
                         style: _style,
                       ),
                       onPressed: onSkip,
-                      shape: StadiumBorder(),
                     ),
                     SizedBox(width: 16.0 * 2),
                   ],
