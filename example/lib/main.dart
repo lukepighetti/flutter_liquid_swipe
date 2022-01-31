@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'liquid_swipe',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: _HomePage(),
