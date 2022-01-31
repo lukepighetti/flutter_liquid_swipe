@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'liquid_swipe',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -43,8 +44,9 @@ class _HomePage extends StatelessWidget {
             ),
             title: "Online",
             subtitle: "Gambling",
-            body:
-                "Temporibus autem aut\nofficiis debitis aut rerum\nnecessatatibus.",
+            body: "Temporibus autem aut\n"
+                "officiis debitis aut rerum\n"
+                "necessatatibus.",
             buttonColor: Colors.purple.shade800,
             titleColor: Colors.purple.shade100,
             subtitleColor: Colors.grey.shade900,
@@ -66,8 +68,9 @@ class _HomePage extends StatelessWidget {
             ),
             title: "For",
             subtitle: "Gamers",
-            body:
-                "Excepteur sint occaecat cupidatat \nnonproident, sunt in \nculpa qui officia",
+            body: "Excepteur sint occaecat cupida\n"
+                "nonproident, sunt in\n"
+                "culpa qui officia",
             buttonColor: Colors.white.withOpacity(0.9),
             titleColor: Colors.pink.shade200.withOpacity(0.5),
             subtitleColor: Colors.pink.shade100.withOpacity(0.8),
@@ -80,6 +83,7 @@ class _HomePage extends StatelessWidget {
           ),
 
           /// Third page
+          // TODO(Luke Pighetti): implement third page swipe
           LiquidSwipeCard(
             onTapName: () => liquidSwipeController.previous(),
             name: "Back",
@@ -89,8 +93,9 @@ class _HomePage extends StatelessWidget {
             ),
             title: "Cash",
             subtitle: "Prizes",
-            body:
-                "Delorem sunt occaecat cupidatat \nnonproident, mit a \nculpa qui officia",
+            body: "Delorem sunt occaecat cupida\n"
+                "nonproident, mit a\n"
+                "culpa qui officia",
             buttonColor: Colors.white.withOpacity(0.9),
             titleColor: Colors.red.shade200.withOpacity(0.5),
             subtitleColor: Colors.red.shade100.withOpacity(0.8),

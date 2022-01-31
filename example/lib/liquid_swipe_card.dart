@@ -43,6 +43,8 @@ class LiquidSwipeCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // TODO(Luke Pighetti): extract into [LiquidSwipeView]
+            // Action Bar
             Builder(
               builder: (context) {
                 var _style = TextStyle(
