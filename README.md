@@ -1,4 +1,4 @@
-# liquid_swipe
+# flutter_liquid_swipe
 
 Replicating the award winning Cuberto Liquid Swipe design as an interactivity experiment in Flutter.
 
